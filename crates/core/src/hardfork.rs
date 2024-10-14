@@ -32,8 +32,10 @@ static HARDFORK_HEIGHTS: Lazy<HashMap<u64, HashMap<SpecId, u64>>> = Lazy::new(||
     map
 });
 
+use serde::{Deserialize, Serialize};
+
 /// Hardfork configuration for Scroll networks.
-#[derive(Debug, Default, Copy, Clone)]
+#[derive(Serialize, Deserialize, Debug, Default, Copy, Clone)]
 pub struct HardforkConfig {
     bernoulli_block: u64,
     curie_block: u64,

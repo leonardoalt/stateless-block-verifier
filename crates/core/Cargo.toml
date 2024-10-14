@@ -19,6 +19,7 @@ revm.workspace = true
 rkyv.workspace = true
 thiserror.workspace = true
 tiny-keccak.workspace = true
+serde.workspace = true
 
 sbv-primitives.workspace = true
 sbv-utils.workspace = true

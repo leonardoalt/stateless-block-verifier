@@ -13,6 +13,8 @@ mod commands;
 
 mod utils;
 
+mod powdr_host;
+
 #[derive(Parser)]
 #[command(version, about = "Stateless Block Verifier")]
 struct Cli {

@@ -18,10 +18,15 @@ once_cell = "1.19"
 rkyv = "0.8"
 thiserror = "1.0"
 tiny-keccak = "2.0"
+powdr = { git = "https://github.com/powdr-labs/powdr" }
 
 # dependencies from scroll-tech
-poseidon-bn254 = { git = "https://github.com/scroll-tech/poseidon-bn254", branch = "master", features = ["bn254"] }
-zktrie-ng = { git = "https://github.com/scroll-tech/zktrie-ng", branch = "master", features = ["scroll"] }
+poseidon-bn254 = { git = "https://github.com/scroll-tech/poseidon-bn254", branch = "master", features = [
+  "bn254",
+] }
+zktrie-ng = { git = "https://github.com/scroll-tech/zktrie-ng", branch = "master", features = [
+  "scroll",
+] }
 
 # binary dependencies
 anyhow = "1.0"
@@ -61,10 +66,10 @@ git = "https://github.com/scroll-tech/revm"
 branch = "scroll-evm-executor/v42"
 default-features = false
 features = [
-    "scroll-default-handler",
-    "scroll-poseidon-codehash",
-    "std",
-    "optional_no_base_fee"
+  "scroll-default-handler",
+  "scroll-poseidon-codehash",
+  "std",
+  "optional_no_base_fee",
 ]
 
 [workspace.dependencies.revm-primitives] # v42
@@ -72,10 +77,10 @@ git = "https://github.com/scroll-tech/revm"
 branch = "scroll-evm-executor/v42"
 default-features = false
 features = [
-    "scroll-default-handler",
-    "scroll-poseidon-codehash",
-    "std",
-    "optional_no_base_fee"
+  "scroll-default-handler",
+  "scroll-poseidon-codehash",
+  "std",
+  "optional_no_base_fee",
 ]
 
 [workspace.lints.rust]
@@ -96,7 +101,7 @@ alloy-eip7702 = { git = "https://github.com/scroll-tech/alloy-eips", branch = "v
 
 alloy-core = { git = "https://github.com/scroll-tech/alloy-core", branch = "v0.8.0" }
 alloy-primitives = { git = "https://github.com/scroll-tech/alloy-core", branch = "v0.8.0" }
-alloy-sol-types = {git = "https://github.com/scroll-tech/alloy-core", branch = "v0.8.0" }
+alloy-sol-types = { git = "https://github.com/scroll-tech/alloy-core", branch = "v0.8.0" }
 
 # for local development
 # [patch."https://github.com/scroll-tech/revm"]

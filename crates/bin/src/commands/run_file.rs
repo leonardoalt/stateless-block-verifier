@@ -9,6 +9,8 @@ use std::{cell::RefCell, path::PathBuf};
 use tiny_keccak::{Hasher, Keccak};
 use tokio::task::JoinSet;
 
+use crate::powdr_host;
+
 #[derive(Args)]
 pub struct RunFileCommand {
     /// Path to the trace file
@@ -136,6 +138,8 @@ async fn run_trace(
 ) -> anyhow::Result<()> {
     let trace = read_block_trace(&path).await?;
     let fork_config = fork_config(trace.chain_id());
-    tokio::task::spawn_blocking(move || utils::verify(&trace, &fork_config)).await??;
+    //tokio::task::spawn_blocking(move || utils::verify(&trace, &fork_config)).await??;
+    tokio::task::spawn_blocking(move || powdr_host::verify::<BlockTrace>(trace, &fork_config))
+        .await??;
     Ok(())
 }
